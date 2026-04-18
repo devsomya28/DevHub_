@@ -118,13 +118,13 @@ export default function AIHelper() {
   };
 
   return (
-    <div className="flex h-full flex-col items-center">
-      <div className="w-full max-w-3xl space-y-8">
+    <div className="flex min-h-screen flex-col items-center px-3 md:px-6 py-4">
+      <div className="w-full max-w-3xl space-y-6 md:space-y-8">
         <div className="text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-500/10 border border-indigo-500/20 shadow-inner">
             <Sparkles className="h-8 w-8 text-indigo-400" />
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-white">AI Assistant</h1>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">AI Assistant</h1>
           <p className="mt-2 text-slate-400">Describe what you want to build or ask a coding question.</p>
         </div>
         
@@ -160,7 +160,7 @@ export default function AIHelper() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="E.g., Write a custom React hook for debouncing search inputs..."
-            className="h-32 w-full resize-none bg-transparent p-6 text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="h-28 md:h-32 w-full resize-none ... bg-transparent p-6 text-slate-200 placeholder:text-slate-500 focus:outline-none"
             disabled={isLoading || showKeyInput}
           />
           <div className="flex items-center justify-between border-t border-slate-800/50 bg-slate-900/80 px-4 py-3">
@@ -210,7 +210,7 @@ export default function AIHelper() {
 
         {response && !isLoading && !error && (
           <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-xl backdrop-blur-sm opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
-            <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900/80 px-6 py-4">
+            <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between border-b border-slate-800 bg-slate-900/80 px-6 py-4">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/20">
                   <Bot className="h-5 w-5" />
@@ -226,7 +226,7 @@ export default function AIHelper() {
               </button>
             </div>
             
-            <div className="p-6">
+            <div className="p-4 md:p-6">
               <div className="text-slate-300 leading-relaxed space-y-4">
                 {renderResponse(response)}
               </div>
